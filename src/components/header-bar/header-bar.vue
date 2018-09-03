@@ -35,6 +35,32 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped=""  >
+  // 顶部导航栏
+
+  // header bar          v
+  $header_bar_height: 60px;
+
+  // icon wrap
+  $header_icon_wrap_height: $header_bar_height;
+  $header_icon_wrap_width:  50px;
+  $header_icon_size: 30px;
+
+  // user wrap
+  $header_user_wrap_padding: 20px;
+
+
+  .header-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height:$header_bar_height;
+    background-color: #fff;
+    box-shadow: 0 1px 5px #d3d3d3;
+    >div {
+      float: right;
+    }
+  }
 
 </style>
