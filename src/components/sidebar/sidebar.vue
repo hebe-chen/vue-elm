@@ -4,40 +4,23 @@
       <img src="/static/images/avatar_logo.png" alt="">
     </div>
     <ul class="sidebar__container">
-      <li>
-        <router-link to="/dashboard"><span class="sidebar__icon sidebar__icon-1"></span>概况</router-link>
-      </li>
-      <li>
-        <router-link to="/goods"><span class="sidebar__icon sidebar__icon-2"></span>商品</router-link>
-      </li>
-      <li>
-        <router-link to="/order"><span class="sidebar__icon sidebar__icon-3"></span>订单</router-link>
-      </li>
-      <li>
-        <router-link to="/workspace"><span class="sidebar__icon sidebar__icon-4"></span>装修</router-link>
-      </li>
-      <li>
-        <router-link to="/member"><span class="sidebar__icon sidebar__icon-5"></span>客户</router-link>
-      </li>
-      <li>
-        <router-link to="/marketing"><span class="sidebar__icon sidebar__icon-6"></span>营销</router-link>
-      </li>
-      <li>
-          <router-link to="/information"><span class="sidebar__icon sidebar__icon-7"></span>资讯</router-link>
-      </li>
-      <li>
-        <router-link to="/weixin"><span class="sidebar__icon sidebar__icon-8"></span>微信</router-link>
-      </li>
-      <li>
-        <router-link to="/setting"><span class="sidebar__icon sidebar__icon-9"></span>设置</router-link>
+      <li v-for="(item,index) in sidebarItem">
+        <router-link :to="item.path"><span class="sidebar__icon" :class=" 'sidebar__icon-' + index"></span>{{item.name}}</router-link>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+    import { routes } from "../../router";
+
     export default {
-        name: "sidebar"
+        name: "sidebar",
+        data(){
+          return {
+            sidebarItem:routes
+          }
+        }
     }
 </script>
 
